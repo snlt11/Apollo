@@ -4,7 +4,7 @@ use App\Routing\RouterDispatcher;
 
 $router = new AltoRouter();
 
-$router->map('GET', '/', 'App\Controllers\TestController@test', 'Index');
+$router->map('GET', '/', 'App\Controllers\IndexController@index', 'Index');
 
 
 new RouterDispatcher($router);
