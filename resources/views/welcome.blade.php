@@ -9,5 +9,6 @@
 </head>
 <body>
     <h1>Welcome form Blade</h1>
+    <img src="<?= URL_ROOT.'assets/images/lego.png' ?>"  alt="Image">
 </body>
 </html>
