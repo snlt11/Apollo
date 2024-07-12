@@ -1,7 +1,7 @@
 <div class="container-fluid bg-dark">
     <nav class="container navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand english text-white" href="#">
+            <a class="navbar-brand english text-white" href="/">
                 <img src="<?php echo e(assetsLink("images/lego.png")); ?>" class="rounded" width="30" height="30"  alt="shopping_icon" />
                 <span class="ml-3">LEGO</span>
             </a>
