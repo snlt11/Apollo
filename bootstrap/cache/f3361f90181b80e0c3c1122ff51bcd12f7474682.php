@@ -15,6 +15,7 @@
                             <label for="formFile" class="form-label">Default file input example</label>
                             <input class="form-control" name="file" type="file" id="formFile">
                         </div>
+                        <input type="hidden" name="csrf_token" value="<?php echo e(\App\classes\CSRFToken::__token()); ?>">
                         <div class="">
                             <button type="submit" class="btn btn-primary">Submit</button>
                             <a href="/admin" class="btn btn-warning">Back</a>

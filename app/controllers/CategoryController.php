@@ -12,6 +12,7 @@ class CategoryController extends BaseController
     }
     public function store(): void
     {
-        beautify(Request::oldValue("post","categoryName"));
+        $post = Request::get('post');
+        beautify($post->csrf_token);
     }
 }
