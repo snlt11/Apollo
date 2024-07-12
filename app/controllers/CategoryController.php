@@ -2,6 +2,8 @@
 
 namespace App\controllers;
 
+use App\classes\Request;
+
 class CategoryController extends BaseController
 {
     public function index(): void
@@ -10,6 +12,6 @@ class CategoryController extends BaseController
     }
     public function store(): void
     {
-        beautify($_POST);
+        beautify(Request::oldValue("post","categoryName"));
     }
 }
