@@ -8,3 +8,12 @@ function view($path,$data=[])
     echo $blade->view()->make($path,$data)->render();
 }
 
+function beautify($data): void
+{
+    echo "<pre>". print_r($data, true)."</pre>";
+}
+
+function assetsLink($link): void
+{
+    echo URL_ROOT.'assets/'.$link;
+}

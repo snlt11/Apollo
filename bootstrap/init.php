@@ -9,6 +9,8 @@ const URL_ROOT = 'http://localhost:8000/';
 
 require_once(APP_ROOT."/vendor/autoload.php");
 
+new \App\classes\ErrorHandler();
+
 require_once(APP_ROOT."/app/config/_env.php");
 
 require_once(APP_ROOT."/app/routing/router.php");
