@@ -13,4 +13,6 @@ new \App\classes\ErrorHandler();
 
 require_once(APP_ROOT."/app/config/_env.php");
 
+new \App\classes\Database();
+
 require_once(APP_ROOT."/app/routing/router.php");
