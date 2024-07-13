@@ -3,4 +3,3 @@
 use App\classes\Session;
 
 require_once("../bootstrap/init.php");
-Session::unset('token');
