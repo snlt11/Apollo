@@ -9,6 +9,9 @@
                 <div class="col-5">
                     <form method="POST" enctype="multipart/form-data">
                         <h1 class="text-center">Create Category</h1>
+                        @if(\App\classes\Session::has('error'))
+                                {{ \App\classes\Session::flashMessage('error') }}
+                        @endif
                         <div class="mb-3">
                             <label for="category" class="form-label">Category</label>
                             <input type="text" name="categoryName" class="form-control" id="category">

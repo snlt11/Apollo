@@ -7,6 +7,10 @@
                 <div class="col-5">
                     <form method="POST" enctype="multipart/form-data">
                         <h1 class="text-center">Create Category</h1>
+                        <?php if(\App\classes\Session::has('error')): ?>
+                                <?php echo e(\App\classes\Session::flashMessage('error')); ?>
+
+                        <?php endif; ?>
                         <div class="mb-3">
                             <label for="category" class="form-label">Category</label>
                             <input type="text" name="categoryName" class="form-control" id="category">
