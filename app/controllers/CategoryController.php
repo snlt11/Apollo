@@ -30,7 +30,19 @@ class CategoryController extends BaseController
                 $errors = $validation->getErrors();
                 view('admin/category/create',compact('categories','errors'));
             }else{
-                echo "Category created successfully";
+                $slug = slug($post->name);
+                $result = Category::create([
+                    "name" => $post->name,
+                    "slug" => $slug,
+                ]);
+                if($result){
+                    $categories = Category::all();
+                    $success = ['success' => 'Category created successfully'];
+                    view('admin/category/create',compact('categories','success'));
+                }else{
+                    Session::flashMessage('error', 'Failed to create category');
+                    Redirect::back();
+                }
             }
         }else{
             Session::flashMessage('error', 'Invalid CSRF token. Please try again');

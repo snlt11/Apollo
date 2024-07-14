@@ -9,7 +9,7 @@
 @if(isset($success))
     @foreach($success as $key)
         <div class='alert alert-success alert-dismissible fade show' role='alert'>
-            <strong>{{$key[0]}}</strong>
+            <strong>{{$key}}</strong>
             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
         </div>
     @endforeach

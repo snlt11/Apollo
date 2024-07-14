@@ -18,7 +18,6 @@
 
                                     <?php endif; ?>
                                     <?php echo $__env->make('layouts.reportMessages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
-
                                     <div class="mb-3">
                                         <label for="category" class="form-label">Category</label>
                                         <input type="text" name="name" class="form-control" id="category">
