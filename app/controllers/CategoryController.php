@@ -15,17 +15,14 @@ class CategoryController extends BaseController
         view('admin/category/create');
     }
 
+    /**
+     * @throws \Exception
+     */
     public function store(): void
     {
         $post = Request::get('post');
         if(CSRFToken::checkToken($post)){
-            $uploadFile = new FileUpload();
-            beautify(Request::get('files'));
-
-            echo "<hr>";
-
-            var_dump($uploadFile->moveUploadFile(Request::get('files')));
-            beautify($post->csrf_token);
+            beautify(Request::allValues());
         }else{
             Session::flashMessage('error', 'Invalid CSRF token. Please try again');
             Redirect::back();
