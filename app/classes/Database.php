@@ -1,14 +1,14 @@
 <?php
 
 namespace App\classes;
-use Illuminate\Database\Capsule\Manager as Capsule;
+use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Container\Container;
 class Database
 {
     public function __construct()
     {
-        $capsule = new Capsule;
+        $capsule = new DB;
 
         $capsule->addConnection([
             'driver' => $_ENV['DB_CONNECTION'],

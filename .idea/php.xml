@@ -37,8 +37,11 @@
       <path value="$PROJECT_DIR$/vendor/philo/laravel-blade" />
       <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
       <path value="$PROJECT_DIR$/vendor/kylekatarnls/update-helper" />
-      <path value="$PROJECT_DIR$/vendor/illuminate/database" />
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/database" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/translation" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/validation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.3" />

@@ -26,6 +26,7 @@ class ComposerStaticInite875ae8441d070d7dda5f4b47a2117aa
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Contracts\\Translation\\' => 30,
             'Symfony\\Component\\Translation\\' => 30,
+            'Symfony\\Component\\HttpFoundation\\' => 33,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\Debug\\' => 24,
         ),
@@ -40,6 +41,8 @@ class ComposerStaticInite875ae8441d070d7dda5f4b47a2117aa
         'I' => 
         array (
             'Illuminate\\View\\' => 16,
+            'Illuminate\\Validation\\' => 22,
+            'Illuminate\\Translation\\' => 23,
             'Illuminate\\Support\\' => 19,
             'Illuminate\\Filesystem\\' => 22,
             'Illuminate\\Events\\' => 18,
@@ -88,6 +91,10 @@ class ComposerStaticInite875ae8441d070d7dda5f4b47a2117aa
         array (
             0 => __DIR__ . '/..' . '/symfony/translation',
         ),
+        'Symfony\\Component\\HttpFoundation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-foundation',
+        ),
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
@@ -119,6 +126,14 @@ class ComposerStaticInite875ae8441d070d7dda5f4b47a2117aa
         'Illuminate\\View\\' => 
         array (
             0 => __DIR__ . '/..' . '/illuminate/view',
+        ),
+        'Illuminate\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/validation',
+        ),
+        'Illuminate\\Translation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/illuminate/translation',
         ),
         'Illuminate\\Support\\' => 
         array (
