@@ -17,6 +17,10 @@
                                         <?php echo e(\App\classes\Session::flashMessage('error')); ?>
 
                                     <?php endif; ?>
+                                    <?php if(\App\classes\Session::has('success')): ?>
+                                        <?php echo e(\App\classes\Session::flashMessage('success')); ?>
+
+                                    <?php endif; ?>
                                     <?php echo $__env->make('layouts.reportMessages', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
                                     <div class="mb-3">
                                         <label for="category" class="form-label">Category</label>
@@ -33,8 +37,12 @@
                                         <li class="list-group-item">
                                             <a href="#"><?php echo e($category->name); ?></a>
                                         <span class="float-right">
-                                            <i class="fa fa-edit text-warning">Edit</i>
-                                            <i class="fa fa-trash text-danger">Delete</i>
+                                            <a href="/admin/category/<?php echo e($category->id); ?>/update">
+                                                <i class="fa fa-edit text-warning">Edit</i>
+                                            </a>
+                                            <a href="/admin/category/<?php echo e($category->id); ?>/delete">
+                                                <i class="fa fa-trash text-danger">Delete</i>
+                                            </a>
                                         </span>
                                         </li>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

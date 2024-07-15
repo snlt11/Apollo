@@ -37,7 +37,7 @@ class CategoryController extends BaseController
                 ]);
                 if($result){
                     $categories = Category::all();
-                    $success = ['success' => 'Category created successfully'];
+                    $success = ['Category created successfully'];
                     view('admin/category/create',compact('categories','success'));
                 }else{
                     Session::flashMessage('error', 'Failed to create category');
@@ -49,4 +49,18 @@ class CategoryController extends BaseController
             Redirect::back();
         }
     }
+
+    public function delete($id): void
+    {
+        $result = Category::destroy($id);
+        if($result){
+            Session::flashMessage('success', 'Category deleted successfully');
+            Redirect::to('/admin/category/create');
+        }else{
+            Session::flashMessage('error', 'Failed to delete category');
+            Redirect::back();
+        }
+
+    }
+
 }

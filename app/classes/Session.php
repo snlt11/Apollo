@@ -37,7 +37,7 @@ class Session
         if (!empty($value)) {
             self::replace($key, $value);
         } else {
-            echo "<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+            echo "<div class='alert alert-primary alert-dismissible fade show' role='alert'>
                         <strong>".self::get($key)."</strong>
                         <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
                    </div>";

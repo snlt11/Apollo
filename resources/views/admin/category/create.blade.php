@@ -18,6 +18,9 @@
                                     @if(\App\classes\Session::has('error'))
                                         {{ \App\classes\Session::flashMessage('error') }}
                                     @endif
+                                    @if(\App\classes\Session::has('success'))
+                                        {{ \App\classes\Session::flashMessage('success') }}
+                                    @endif
                                     @include('layouts.reportMessages')
                                     <div class="mb-3">
                                         <label for="category" class="form-label">Category</label>
@@ -34,8 +37,12 @@
                                         <li class="list-group-item">
                                             <a href="#">{{$category->name}}</a>
                                         <span class="float-right">
-                                            <i class="fa fa-edit text-warning">Edit</i>
-                                            <i class="fa fa-trash text-danger">Delete</i>
+                                            <a href="/admin/category/{{$category->id}}/update">
+                                                <i class="fa fa-edit text-warning">Edit</i>
+                                            </a>
+                                            <a href="/admin/category/{{$category->id}}/delete">
+                                                <i class="fa fa-trash text-danger">Delete</i>
+                                            </a>
                                         </span>
                                         </li>
                                     @endforeach

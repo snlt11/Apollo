@@ -3,7 +3,7 @@
         'name' => 'saina/advanced',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'c92a6503299be1bea628f69580163059022653a3',
+        'reference' => '7680510f984518961659d20a1c05d55f8c285b16',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -193,7 +193,7 @@
         'saina/advanced' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c92a6503299be1bea628f69580163059022653a3',
+            'reference' => '7680510f984518961659d20a1c05d55f8c285b16',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
