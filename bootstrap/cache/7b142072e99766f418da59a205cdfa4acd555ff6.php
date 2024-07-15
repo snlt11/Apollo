@@ -21,12 +21,21 @@
                     </li>
                     <li class="nav-item dropdown bg-dark">
                         <a class="nav-link dropdown-toggle english text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown link
+                            <?php if(\App\classes\Auth::check()): ?>
+                                <?php echo e(\App\classes\Auth::user()->name); ?>
+
+                            <?php else: ?>
+                                Guest
+                            <?php endif; ?>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <?php if(\App\classes\Auth::check()): ?>
+                                <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+                            <?php else: ?>
+                                <li><a class="dropdown-item" href="/user/login">Login</a></li>
+                                <li><a class="dropdown-item" href="/user/register">Register</a></li>
+                            <?php endif; ?>
+
                         </ul>
                     </li>
                 </ul>

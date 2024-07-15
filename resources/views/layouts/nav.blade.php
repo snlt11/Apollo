@@ -21,12 +21,20 @@
                     </li>
                     <li class="nav-item dropdown bg-dark">
                         <a class="nav-link dropdown-toggle english text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown link
+                            @if(\App\classes\Auth::check())
+                                {{\App\classes\Auth::user()->name}}
+                            @else
+                                Guest
+                            @endif
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            @if(\App\classes\Auth::check())
+                                <li><a class="dropdown-item" href="/user/logout">Logout</a></li>
+                            @else
+                                <li><a class="dropdown-item" href="/user/login">Login</a></li>
+                                <li><a class="dropdown-item" href="/user/register">Register</a></li>
+                            @endif
+
                         </ul>
                     </li>
                 </ul>

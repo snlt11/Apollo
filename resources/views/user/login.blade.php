@@ -7,6 +7,12 @@
         <div class="col-md-6 offset-md-3">
             <h1 class="my-5 text-center">User Login </h1>
             <form method="post" action="/user/login">
+                @if(\App\classes\Session::has('error'))
+                    {{ \App\classes\Session::flashMessage('error') }}
+                @endif
+                @if(\App\classes\Session::has('success'))
+                    {{ \App\classes\Session::flashMessage('success') }}
+                @endif
                 <input type="hidden" name="token" value="{{ \App\classes\CSRFToken::__token()}}">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>

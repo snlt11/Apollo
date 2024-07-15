@@ -7,17 +7,37 @@ use App\classes\Redirect;
 use App\classes\Request;
 use App\classes\Session;
 use App\models\User;
+use JetBrains\PhpStorm\NoReturn;
 
 class UserController
 {
-    public function login(){
+    public function login(): void
+    {
         view('user.login');
     }
-    public function postLogin(){
+    #[NoReturn] public function postLogin(){
         $post = Request::get('post');
-        beautify($post);
+        if(CSRFToken::checkToken($post->token)){
+            $user = User::where('email', $post->email)->first();
+            if($user){
+                if(password_verify($post->password, $user->password)){
+                    Session::set('user_id', $user->id);
+                    Redirect::to('/');
+                }else{
+                    Session::flashMessage('error', 'Incorrect password');
+                    Redirect::to('/user/login');
+                }
+            }else{
+                Session::flashMessage('error', 'There is no user with this email');
+                Redirect::to('/user/login');
+            }
+        }else{
+            Session::flashMessage('error', 'Invalid CSRF Token');
+            Redirect::to('/user/login');
+        }
     }
-    public function register(){
+    public function register(): void
+    {
         view('user.register');
     }
     public function postRegister(): void
@@ -57,7 +77,10 @@ class UserController
             Redirect::to('/user/register');
         }
     }
-    public function logout(){
-
+    #[NoReturn] public function logout(): void
+    {
+        Session::unset('user');
+        session_destroy();
+        Redirect::to('/user/login');
     }
 }
