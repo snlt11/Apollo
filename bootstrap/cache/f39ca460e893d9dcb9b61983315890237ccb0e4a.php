@@ -3,9 +3,21 @@
 <?php $__env->startSection('content'); ?>
     <div class="container">
         <div class="col-md-6 offset-md-3">
-            <h1 class="my-5 text-center">User Register</h1>
+            <h1 class="my-4 text-center">User Register</h1>
+            <?php if(\App\classes\Session::has('error')): ?>
+                <?php echo e(\App\classes\Session::flashMessage('error')); ?>
+
+            <?php endif; ?>
+            <?php if(\App\classes\Session::has('success')): ?>
+                <?php echo e(\App\classes\Session::flashMessage('success')); ?>
+
+            <?php endif; ?>
             <form method="post" action="/user/register">
                 <input type="hidden" name="token" value="<?php echo e(\App\classes\CSRFToken::__token()); ?>">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp">
+                </div>
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
                     <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
