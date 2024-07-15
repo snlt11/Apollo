@@ -1,5 +1,7 @@
 <?php
 use Philo\Blade\Blade;
+use voku\helper\Paginator;
+
 function view($path,$data=[])
 {
     $views = APP_ROOT."/resources/views/";
@@ -28,4 +30,14 @@ function slug($value): string|null
     // Convert to lowercase
     return strtolower(trim($value, '-'));
 }
+
+function pagination($number_of_records, $total, $model)
+{
+    $pages = new Paginator($number_of_records, 'p');
+    $categories = $model->getPaginator($pages->get_limit());
+    $pages->set_total($total);
+    return [$categories, $pages->page_links()];
+}
+
+
 

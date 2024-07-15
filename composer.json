@@ -22,7 +22,8 @@
         "illuminate/database": "^5.5",
         "illuminate/validation": "^5.5",
         "illuminate/events": "^5.5",
-        "nesbot/carbon": "^1.39"
+        "nesbot/carbon": "^1.39",
+        "voku/pagination": "^4.0"
     },
     "config": {
         "allow-plugins": {

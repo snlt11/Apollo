@@ -1,6 +1,13 @@
 <?php $__env->startSection('title','Create Category'); ?>
 
 <?php $__env->startSection('content'); ?>
+            <style>
+                .pagination > li{
+                    padding: 5px 10px;
+                    background :#ddd;
+                    margin-right : 1px;
+                }
+            </style>
             <div class="container-fluid">
                 <h1 class="text-center my-5">Create Category</h1>
                 <div class="row">
@@ -37,8 +44,8 @@
                                         <li class="list-group-item">
                                             <a href="#"><?php echo e($category->name); ?></a>
                                         <span class="float-right">
-                                            <a href="/admin/category/<?php echo e($category->id); ?>/update">
-                                                <i class="fa fa-edit text-warning">Edit</i>
+                                            <a href="">
+                                                <i class="fa fa-edit text-warning" onclick="edit('<?php echo e($category->name); ?>','<?php echo e($category->id); ?>')">Edit</i>
                                             </a>
                                             <a href="/admin/category/<?php echo e($category->id); ?>/delete">
                                                 <i class="fa fa-trash text-danger">Delete</i>
@@ -47,13 +54,41 @@
                                         </li>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </ul>
+                                <div class="mt-5">
+                                    <?php echo $pages; ?>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="modal" tabindex="-1" id="categoryUpdateModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Modal body text goes here.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 <?php $__env->stopSection(); ?>
+
+<script>
+    function edit(name,id){
+        alert(`Name is : ${name}  id : ${id}`);
+    }
+</script>
 
 
 <?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

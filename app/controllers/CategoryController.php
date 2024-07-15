@@ -12,8 +12,10 @@ class CategoryController extends BaseController
 {
     public function index(): void
     {
-        $categories = Category::all();
-        view('admin/category/create',compact('categories'));
+        $categories = Category::all()->count();
+        list($categories, $pages) = pagination(3, $categories, new Category());
+        $categories = json_decode(json_encode($categories));
+        view('admin/category/create',compact('categories','pages'));
     }
 
     public function store(): void
@@ -21,7 +23,7 @@ class CategoryController extends BaseController
         $post = Request::get('post');
         if(CSRFToken::checkToken($post)){
             $rules = [
-                "name" => ['required' => true, 'minLength' => 4, 'maxLength' => 15, 'unique' => 'categories'],
+                "name" => ['required' => true, 'minLength' => 2, 'maxLength' => 15, 'unique' => 'categories'],
             ];
             $validation = new \App\classes\ValidationRequest();
             $validation->checkValidate($post,$rules);
