@@ -1,6 +1,6 @@
 # Apollo
 
-This project is an advanced PHP application that utilizes various libraries and design patterns to implement robust features. It includes a custom routing system, Blade templating engine, CSRF protection, form validation, and more.
+This is a PHP application built with a custom routing system, Blade templating engine, CSRF protection, and form validation. It utilizes various libraries.
 
 ## Requirements
 
