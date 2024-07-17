@@ -1,5 +1,5 @@
 {
-    "name": "saina/advanced",
+    "name": "saina/Apollo",
     "autoload": {
         "psr-4": {
             "App\\": "app/"
